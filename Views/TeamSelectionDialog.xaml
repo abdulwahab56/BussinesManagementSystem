@@ -1,0 +1,31 @@
+<Window x:Class="BetManagement.Desktop.Views.TeamSelectionDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Team Selection and Creation" 
+        Height="420" Width="480" 
+        WindowStartupLocation="CenterOwner" 
+        ResizeMode="NoResize" Background="#FFFFFF">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Team Selection and Creation" FontSize="16" FontWeight="Bold" Margin="0,0,0,12"/>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="True" RowHeight="28" GridLinesVisibility="Horizontal">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Team Name" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Nick Name" Binding="{Binding NickName}" Width="100"/>
+                <DataGridCheckBoxColumn Header="Select" Binding="{Binding IsSelected}" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button Content="Add New" Width="80" Margin="0,0,8,0" Padding="4"/>
+            <Button Content="OK" Width="80" IsDefault="True" Padding="4" Background="#0067C0" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>
